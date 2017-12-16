@@ -2,8 +2,10 @@
 
 cd "/$USER/Desktop";
 
-git clone https://github/InspectorChocolatey/login-system;
+git clone https://github.com/InspectorChocolatey/login-system login-system;
 
+
+git clone https://github.com/InspectorChocolatey/php php;
 
 # clone php
 # download sublime
