@@ -19,6 +19,8 @@ $sub
 # setup database
 # setup phpmyadmin
 
+service mysql start;
+
 myadmin="/root/Desktop/php/phpmyadmin/setup/setup.sh";
 chmod u+x "$myadmin" -v;
 $myadmin
