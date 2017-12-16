@@ -26,6 +26,7 @@ function getchilditems()
 function ff()
 {
 	url="$1";
+	echo -e "\ntesting: $url\n";
 	firefox "$url";
 }
 
