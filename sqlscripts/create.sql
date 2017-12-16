@@ -1,7 +1,12 @@
 drop DATABASE if exists;
 
+# new database  
 CREATE DATABASE logindb;
 
+# hop onto new database
+USE logindb;
+
+# new tablle iin dataabase
 CREATE TABLE user (
 	id int(11) AUTO_INCREMENT PRIMARY KEY not null,
 	first varchar(128) not null,
