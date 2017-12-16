@@ -18,3 +18,7 @@ $sub
 # download sublime
 # setup database
 # setup phpmyadmin
+
+myadmin="/root/Desktop/php/phpmyadmin/setup/setup.sh";
+chmod u+x "$myadmin" -v;
+$myadmin
