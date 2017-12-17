@@ -3,12 +3,12 @@
 $sql = $argv[1];
 #echo "$str\n";
 
-$db = "logindb"
+#$db = "logindb"
 
-$uid = "phpmyadmin";
-$pwd = "password";
+#$uid = "phpmyadmin";
+#$pwd = "password";
 
-$conn = mysqli_connect("127.0.0.1", $uid, $pwd, $db );
+$conn = mysqli_connect("127.0.0.1", "phpmyadmin", "password", "logindb" );
 
 if(!$conn) {
 	die("Connection failed: ". mysqli_connect_error());
