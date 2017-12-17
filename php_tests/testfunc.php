@@ -11,10 +11,16 @@ if(empty($mystr)) {
 
 }
 
-/*
-   topic: time();	
-     url: http://php.net/manual/en/function.time.php
-*/
+if(!isset($newvar)) {
+
+	echo "The variable is not set...\n";
+
+} else {
+
+	echo "The variable is set...\n";
+
+}
+
 
 $nextWeek = time() + (7 * 24 * 60 * 60);
 
