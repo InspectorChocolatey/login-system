@@ -11,6 +11,11 @@ if(empty($mystr)) {
 
 }
 
+/*
+   topic: time();	
+     url: http://php.net/manual/en/function.time.php
+*/
+
 $nextWeek = time() + (7 * 24 * 60 * 60);
 
 echo 'Now:       '. date('Y-m-d') ."\n";
