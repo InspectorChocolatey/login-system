@@ -3,31 +3,31 @@
 if(isset($_POST['submit'])) {
 
 	$file = $_FILES['file'];
+	printr($file);
+	$fileName = $_FILES['file']['name'];
+	$fileTmpName = $_FILES['file']['tmp_name'];	
+	$fileSize = $_FILES['file']['size'];
+	$fileError = $_FILES['file']['error'];
+	$fileType = $_FILES['file']['type'];
 
-	$name = $_FILES['file']['name'];
-	$tmpname = $_FILES['file']['tmp_name'];	
-	$size = $_FILES['file']['size'];
-	$error = $_FILES['file']['error'];
-	$type = $_FILES['file']['type'];
-
-	$ext = explode('.', $name);
-	$actualext = strtolower(end($ext));
+	$fileExt = explode('.', $fileName);
+	$fileActualExt = strtolower(end($fileExt));
 
 	// What kinds of file extensions do we want to allow someone to upload?
 
-	$allowed = array('jpg','jpeg','png','pdf');
+	$allowed = array('jpg', 'jpeg', 'png', 'pdf');
 
 // extension is (jpg jped png pdf): PERMIT
-	if (in_array($ext, $allowed)) {
+	if (in_array($fileActualExt, $allowed)) {
 
-		if ($error === 0) {
+		if ($fileError === 0) {
 // size is small enough: PERMIT 			
-			if ($size < 1000000) {
+			if ($fileSize < 1000000) {
 
-				$namenew = uniqid('', true).".".$actualext;
-				$destination = 'uploads/'.$namenew;
+				$fileNameNew = uniqid('', true).".".$fileActualExt;
+				$fileDestination = 'uploads/'.$fileNameNew;
 
-				move_uploaded_file($tmpname, $destination);
+				move_uploaded_file($fileTmpName, $fileDestination);
 
 				header("Location: index.php?uploadsuccess");
 // size is too big: DENY
